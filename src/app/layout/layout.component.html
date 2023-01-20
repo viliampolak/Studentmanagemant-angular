@@ -1,0 +1,35 @@
+<div class="navbar navbar-expand-md navbar-dark bg-tr">
+  <h1 class="text-white col-7" id="hihihi">Student Management</h1>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarCollapse"
+    aria-controls="navbarCollapse"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="toggleNavbarCollapsing()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    class="collapse navbar-collapse"
+    [class.collapse]="navbarCollapsed"
+    id="navbarCollapse"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/adduser">Add User</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/listuser">List Users</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/edituser">Edit User</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="logout()" *ngIf="v=='true'">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>

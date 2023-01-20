@@ -1,0 +1,28 @@
+.bg-tr{
+  background: #59466E
+}
+
+@media only screen and (max-width: 767px) {
+  .bg-red{
+  background: linear-gradient(to left,#7a0e10 0,#740b0c 100%);
+  text-align: right;
+  margin-top:15px;
+  margin-bottom:-2px;
+  margin-left:-11px;
+  margin-right:-15px;
+  padding-right:15px;
+}
+}
+
+:host {
+  padding-top: 66px;
+}
+
+.nav-link {
+  text-align: right;
+  padding-right: 10%;
+}
+
+#hihihi {
+  padding-left: 3%;
+}
