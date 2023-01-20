@@ -4,31 +4,29 @@
     <a>Add User</a>
   </button>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th class="hidden">Id</th>
-        <th>FirstName</th>
-        <th>LastName</th>
-        <th>UserName</th>
-        <th>Age</th>
-        <th>Salary</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- <tr *ngFor="let user of users">
-        <td class="hidden"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-          <button class="btn btn-success">Delete</button>
-          <button class="btn btn-success" style="margin-left: 20px;">Edit</button>
-        </td>
-      </tr> -->
-    </tbody>
-  </table>
+  <table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Lastname</th>
+    <th>Class</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{ student.firstname }}</td>
+    <td>{{ student.lastname }}</td>
+    <td>{{ student.class }}</td>
+    <td>
+      <button>Details</button>
+      <!-- (click)="navigateToDetail(this.student)" -->
+    </td>
+    <td>
+      <button>Edit</button>
+      <!-- (click)="navigateToEdit(this.student)" -->
+    </td>
+    <td>
+      <button (click)="delete(this.student)">Delete</button>
+      
+    </td>
+  </tr>
+</table>
 </div>
         <!-- (click)="editUser(user)" -->          <!-- (click)="deleteUser(user)" -->

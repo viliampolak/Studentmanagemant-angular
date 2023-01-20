@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../user.service';
 
@@ -8,53 +9,43 @@ import { UserService } from '../../user.service';
   styleUrls: ['./add-user.component.css'],
 })
 export class AddUserComponent implements OnInit {
-
+  studentForm: FormGroup;
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private studentService: UserService,
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit() {
-    
-    if (localStorage.getItem('logged') != 'neznama') {
-      this.router.navigate(['./']);
-      }
-  }
-  submit(
-    name: string,
-    lastname: string,
-    classko: string,
-    age: string,
-    date: string,
-    spec: string,
-    gender: string,
-    average: string,
-    disabled: string,
-    awards: string
-  
-  ): void {
-    let data: [{}] = JSON.parse(localStorage.getItem('students') || '[{}]');
-    localStorage.setItem(
-      'students',
-      JSON.stringify([
-        ...data,
-      {
-          name: name,
-          lastname: lastname,
-          classko: classko,
-          age: age,
-          date: date,
-          spec: spec,
-          gender: gender,
-          average: average,
-          disabled: disabled,
-          awards: awards,
-          lastedit: new Date()
-      }
-      ])
-    );
+  ngOnInit() { 
+    this.studentForm = this.formBuilder.group({
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
+    class: [''],
+    age: [''],
+    birthdate: [''],
+    specia: [''],
+    gender: [''],
+    average: [''],
+    disabled: [],
+    awards: [''],
+  });}
 
-    this.router.navigate(['listuser']);
+
+  submit() {
+    if (this.studentForm.valid) {
+      let data: [{}] = JSON.parse(localStorage.getItem('students') || '[]');
+      localStorage.setItem(
+        'students',
+        JSON.stringify([
+          ...data,
+          {
+            ...this.studentForm.value,
+            lastedit: new Date(),
+          },
+        ])
+      );
+      this.router.navigate(['listuser']);
+    }
   }
 }

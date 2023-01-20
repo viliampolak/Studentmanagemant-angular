@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   password: string;
 
   loginuser() {
-    if (this.password == 'aaaaaaaa' && this.email == 'a@a'){    
+    if (this.password == 'a' && this.email == 'a@a'){    
     localStorage.setItem('logged', 'true');
     this.router.navigate(['/listuser']);
     }
