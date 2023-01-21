@@ -1,6 +1,5 @@
 <div class="col-md-6 user-container" id="hihihi">
-  <h2 style="margin: auto">User Details</h2>
-  <button class="btn" style="width:100px" routerLink="/adduser">
+  <button class="btn" style="width:100px; border: 1px solid black" routerLink="/adduser">
     <a>Add User</a>
   </button>
 
@@ -10,13 +9,12 @@
     <th>Lastname</th>
     <th>Class</th>
   </tr>
-  <div *ngFor="let student of students">
-  <tr>
+  <tr *ngFor="let student of students">
     <td>{{ student.firstname }}</td>
     <td>{{ student.lastname }}</td>
     <td>{{ student.class }}</td>
     <td>
-      <button (click)="navigateToDetail(this.student)">Details</button>
+      <button (click)="details(this.student)">Details</button>
     </td>
     <td>
       <button (click)="navigateToEdit(this.student)">Edit</button>
@@ -25,8 +23,5 @@
       <button (click)="delete(this.student)">Delete</button>
     </td>
   </tr>
-  <tr><app-detail-user></app-detail-user></tr>
-</div>
 </table>
 </div>
-        <!-- (click)="editUser(user)" -->          <!-- (click)="deleteUser(user)" -->

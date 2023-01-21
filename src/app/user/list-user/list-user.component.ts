@@ -36,9 +36,9 @@ export class ListUserComponent {
     this.router.navigate(['edituser']);
   }
 
-  navigateToDetail(student: any) {
-    localStorage.setItem('detail', JSON.stringify(student));
-    this.router.navigate(['detail-user']);
+  details(student: any) {
+    localStorage.setItem('edit', JSON.stringify(student));
+    this.router.navigate(['./detailuser']);
   }
 
   delete(student: any) {

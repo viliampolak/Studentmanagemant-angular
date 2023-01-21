@@ -1,22 +1,25 @@
-<table class="tabulka">
-<tr>
-  <th>vek</th>
-  <th>datum narodenia</th>
-  <th>odbor</th>
-  <th>pohlavie</th>
-  <th>priemer</th>
-  <th>postihnutie</th>
-  <th>ocenenia</th>
-  <th>datum</th>
-</tr>
-<tr>
-  <td>{{ student.age }}</td>
-  <td>{{ student.date }}</td>
-  <td>{{ student.spec }}</td>
-  <td>{{ student.gender }}</td>
-  <td>{{ student.average }}</td>
-  <td>{{ student.disabled }}</td>
-  <td>{{ student.awards }}</td>
-  <td>{{ student.lastedit }}</td>
-</tr>
+<table>
+  <tr>
+    <th>Age</th>
+    <th>Birthdate</th>
+    <th>Study Field</th>
+    <th>Gender</th>
+    <th>Average</th>
+    <th>Disabled</th>
+    <th>Awards</th>
+    <th>Last Edit</th>
+  </tr>
+  <tr>
+    <td>{{ student.age }}</td>
+    <td>{{ student.date }}</td>
+    <td>{{ student.spec }}</td>
+    <td>{{ student.gender }}</td>
+    <td>{{ student.average }}</td>
+    <td>{{ student.disabled }}</td>
+    <td>{{ student.awards }}</td>
+    <td>{{ student.lastedit }}</td>
+  </tr>
 </table>
+<br />
+<br />
+<button (click)="back()">Back</button>

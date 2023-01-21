@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-user',
@@ -8,10 +9,14 @@ import { Router } from '@angular/router';
 })
 export class DetailUserComponent implements OnInit {
   
-  constructor(private router: Router) {}
+  constructor(    
+    private router: Router,
+    private route: ActivatedRoute) {}
   student: any;
   ngOnInit() {
     this.student = JSON.parse(localStorage.getItem('edit') || '{}');
   }
-
+  back() {
+    this.router.navigate(['./listuser']);
+  }
 }

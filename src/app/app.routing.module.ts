@@ -27,7 +27,7 @@ import { DetailUserComponent } from './user/detail-user/detail-user.component';
         canActivate: [RootGuard],
       },
       {
-        path: 'detail-user',
+        path: 'detailuser',
         component: DetailUserComponent,
         canActivate: [RootGuard],
       },
