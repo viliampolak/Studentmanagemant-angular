@@ -11,11 +11,12 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ListUserComponent } from './user/list-user/list-user.component';
 import { RootGuard } from './root.guard';
 import { UserService } from './user.service';
+import { DetailUserComponent } from './user/detail-user/detail-user.component';
 
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule,AppRoutingModule],
-  declarations: [AppComponent, LoginComponent, LayoutComponent, AddUserComponent,ListUserComponent,EditUserComponent],
+  declarations: [AppComponent, LoginComponent, LayoutComponent, AddUserComponent,ListUserComponent,EditUserComponent,DetailUserComponent],
   bootstrap: [AppComponent, LoginComponent],
   providers: [RootGuard, UserService]
 })

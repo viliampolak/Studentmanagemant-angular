@@ -18,9 +18,6 @@ export class EditUserComponent implements OnInit {
   student: any;
 
   ngOnInit() {
-    if (localStorage.getItem('admin') != 't') {
-      this.router.navigate(['login']);
-    }
     this.student = JSON.parse(localStorage.getItem('detail') || '{}');
     this.studentForm = this.formBuilder.group({
       firstname: ['', Validators.required],
@@ -34,7 +31,7 @@ export class EditUserComponent implements OnInit {
       disabled: [],
       awards: [''],
     });
-    this.studentForm.get('name').setValue(this.student.firstname);
+    this.studentForm.get('firstname').setValue(this.student.firstname);
     this.studentForm.get('lastname').setValue(this.student.lastname);
     this.studentForm.get('class').setValue(this.student.class);
     this.studentForm.get('age').setValue(this.student.age);

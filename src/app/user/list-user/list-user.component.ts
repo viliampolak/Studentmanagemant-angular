@@ -2,25 +2,27 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../user.service';
 
+
+
 interface Student {
   id: number;
   firstname: string;
   lastname: string;
   class: string;
   age: number;
-  birthDate: Date;
-  department: string;
+  birthdate: Date;
+  field: string;
   gender: string;
-  gradeAverage: number;
+  average: number;
   disable: string;
   awards: string[];
-  lastEdit: Date;
+  lastedit: Date;
 }
 
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.css']
+  styleUrls: ['./list-user.component.css'],
 })
 export class ListUserComponent {
   students: Student[];
@@ -29,8 +31,18 @@ export class ListUserComponent {
     this.students = JSON.parse(localStorage.getItem('students') || '[]');
   }
 
+  navigateToEdit(student: any) {
+    localStorage.setItem('detail', JSON.stringify(student));
+    this.router.navigate(['edituser']);
+  }
+
+  navigateToDetail(student: any) {
+    localStorage.setItem('detail', JSON.stringify(student));
+    this.router.navigate(['detail-user']);
+  }
+
   delete(student: any) {
-    console.log("delete")
+    console.log('delete');
     localStorage.setItem(
       'students',
       JSON.stringify(
@@ -40,12 +52,11 @@ export class ListUserComponent {
       )
     );
     this.router.navigate(['./']);
-    }
+  }
 
   constructor(
     private router: Router,
     private studentService: UserService,
     private route: ActivatedRoute
-  ) { }
-
+  ) {}
 }

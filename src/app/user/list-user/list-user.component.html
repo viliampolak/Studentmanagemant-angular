@@ -10,23 +10,24 @@
     <th>Lastname</th>
     <th>Class</th>
   </tr>
-  <tr *ngFor="let student of students">
+  <div *ngFor="let student of students">
+  <tr>
     <td>{{ student.firstname }}</td>
     <td>{{ student.lastname }}</td>
     <td>{{ student.class }}</td>
     <td>
-      <button>Details</button>
-      <!-- (click)="navigateToDetail(this.student)" -->
+      <button (click)="navigateToDetail(this.student)">Details</button>
     </td>
     <td>
-      <button>Edit</button>
-      <!-- (click)="navigateToEdit(this.student)" -->
+      <button (click)="navigateToEdit(this.student)">Edit</button>
     </td>
     <td>
       <button (click)="delete(this.student)">Delete</button>
       
     </td>
   </tr>
+  <tr><app-detail-user></app-detail-user></tr>
+</div>
 </table>
 </div>
         <!-- (click)="editUser(user)" -->          <!-- (click)="deleteUser(user)" -->
