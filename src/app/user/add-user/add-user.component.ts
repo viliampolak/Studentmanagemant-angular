@@ -24,7 +24,7 @@ export class AddUserComponent implements OnInit {
     class: [''],
     age: [''],
     birthdate: [''],
-    specia: [''],
+    field: [''],
     gender: [''],
     average: [''],
     disabled: [],

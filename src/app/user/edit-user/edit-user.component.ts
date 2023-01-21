@@ -25,7 +25,7 @@ export class EditUserComponent implements OnInit {
       class: [''],
       age: [''],
       date: [''],
-      spec: [''],
+      field: [''],
       gender: [''],
       average: [''],
       disabled: [],
@@ -36,7 +36,7 @@ export class EditUserComponent implements OnInit {
     this.studentForm.get('class').setValue(this.student.class);
     this.studentForm.get('age').setValue(this.student.age);
     this.studentForm.get('date').setValue(this.student.date);
-    this.studentForm.get('spec').setValue(this.student.spec);
+    this.studentForm.get('field').setValue(this.student.spec);
     this.studentForm.get('gender').setValue(this.student.gender);
     this.studentForm.get('average').setValue(this.student.average);
     this.studentForm.get('disabled').setValue(this.student.disabled);
@@ -59,7 +59,7 @@ export class EditUserComponent implements OnInit {
           )
         )
       );
-      this.router.navigate(['home']);
+      this.router.navigate(['listuser']);
     }
   }
 }

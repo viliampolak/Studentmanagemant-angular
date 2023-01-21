@@ -20,5 +20,9 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('logged') == 'true') {
+      this.router.navigate(['listuser']);
+    }
+}
 }

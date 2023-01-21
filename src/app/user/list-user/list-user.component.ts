@@ -42,7 +42,6 @@ export class ListUserComponent {
   }
 
   delete(student: any) {
-    console.log('delete');
     localStorage.setItem(
       'students',
       JSON.stringify(
@@ -51,7 +50,8 @@ export class ListUserComponent {
         })
       )
     );
-    this.router.navigate(['./']);
+    this.router.navigate(['']);
+
   }
 
   constructor(
